@@ -164,7 +164,7 @@ export default function Header() {
             <ScrollToSectionLink to="nosotros" onClick={() => setIsOpen(false)}>Nosotros</ScrollToSectionLink>
           </MenuItem>
           <MenuItem>
-            <RouterLink to="/blog" onClick={() => setIsOpen(false)}>Blog</RouterLink>
+            <RouterLink to="/blog/" onClick={() => setIsOpen(false)}>Blog</RouterLink>
           </MenuItem>
           <MenuItem>
             <ScrollToSectionLink to="contacto" onClick={() => setIsOpen(false)}>Contacto</ScrollToSectionLink>

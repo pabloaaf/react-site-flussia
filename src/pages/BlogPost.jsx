@@ -3,6 +3,8 @@ import { MDXProvider } from '@mdx-js/react';
 import Highlight from '../components/Highlight';
 import Callout from '../components/Callout';
 import { usePosts } from '../posts/usePosts';
+import Header from '../components/Header';
+import { SectionB as Section, Subtitle } from '../styles/GlobalStyle';
 
 export default function BlogPost() {
   const { id } = useParams();
@@ -19,14 +21,19 @@ export default function BlogPost() {
   const { Component, frontmatter } = post;
 
   return (
-    <div style={{ padding: '3rem 2rem', maxWidth: '800px', margin: '0 auto' }}>
-      <h1>{frontmatter.title}</h1>
-      <p style={{ color: '#777', fontSize: '0.9rem' }}>{frontmatter.date}</p>
-      <hr style={{ margin: '2rem 0' }} />
+    <>
+      <Header />
+      <Section>
+        <div style={{maxWidth: '800px', margin: '0 auto' }}>
+          <h3>{frontmatter.title}</h3>
+          <p style={{ color: '#757575', fontSize: '0.9rem' }}>{frontmatter.date}</p>
+          <hr style={{ margin: '1rem 0' }} />
 
-      <MDXProvider components={{ Highlight, Callout }}>
-        <Component />
-      </MDXProvider>
-    </div>
+          <MDXProvider components={{ Highlight, Callout }}>
+            <Component />
+          </MDXProvider>
+        </div>
+      </Section>
+    </>
   );
 }
