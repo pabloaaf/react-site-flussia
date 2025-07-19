@@ -1,23 +1,28 @@
 import styled from 'styled-components';
 import { useState, useRef, useEffect } from 'react';
-import { Link as ScrollLink } from 'react-scroll';
+import ScrollToSectionLink from './ScrollToSectionLink';
 import { Link as RouterLink } from 'react-router-dom';
 
 const Nav = styled.nav`
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 2rem;
-  background: white;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  position: relative;
-  z-index: 1000;
 `;
 
-const Logo = styled.h1`
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  color: #333;
+const Logo = styled.img`
+  width: 80px;
+  height: auto;
+
+  @media (min-width: 768px) {
+    width: 120px;
+  }
 `;
 
 const Hamburger = styled.button`
@@ -124,9 +129,10 @@ export default function Header() {
     };
   }, [isOpen]);
 
+
   return (
     <Nav>
-      <Logo>Flussia</Logo>
+      <RouterLink to="/"><Logo src="/react-site-flussia/assets/logo-flussia.png" alt="Logo Flussia" /></RouterLink>
 
       <Hamburger ref={hamburgerRef} onClick={() => setIsOpen(!isOpen)} aria-label="Abrir menú">
         <span />
@@ -136,32 +142,32 @@ export default function Header() {
 
       <DesktopMenu>
         <MenuItem>
-        <ScrollLink to="inicio" smooth={true} duration={500} offset={-50}>Inicio</ScrollLink>
+          <ScrollToSectionLink to="inicio">Inicio</ScrollToSectionLink>
         </MenuItem>
         <MenuItem>
-        <ScrollLink to="nosotros" smooth={true} duration={500} offset={-50}>Nosotros</ScrollLink>
+          <ScrollToSectionLink to="nosotros">Nosotros</ScrollToSectionLink>
         </MenuItem>
         <MenuItem>
-        <RouterLink to="/blog">Blog</RouterLink>
+          <RouterLink to="/blog/">Blog</RouterLink>
         </MenuItem>
         <MenuItem>
-        <ScrollLink to="contacto" smooth={true} duration={500} offset={-50}>Contacto</ScrollLink>
+          <ScrollToSectionLink to="contacto">Contacto</ScrollToSectionLink>
         </MenuItem>
       </DesktopMenu>
 
       <MobileMenuWrapper isOpen={isOpen} height={menuHeight}>
         <Menu ref={menuRef}>
           <MenuItem>
-            <ScrollLink to="inicio" smooth={true} duration={500} offset={-50} onClick={() => setIsOpen(false)}>Inicio</ScrollLink>
+            <ScrollToSectionLink to="inicio" onClick={() => setIsOpen(false)}>Inicio</ScrollToSectionLink>
           </MenuItem>
           <MenuItem>
-            <ScrollLink to="nosotros" smooth={true} duration={500} offset={-50} onClick={() => setIsOpen(false)}>Nosotros</ScrollLink>
+            <ScrollToSectionLink to="nosotros" onClick={() => setIsOpen(false)}>Nosotros</ScrollToSectionLink>
           </MenuItem>
           <MenuItem>
-            <RouterLink to="/blog" smooth={true} duration={500} offset={-50} onClick={() => setIsOpen(false)}>Blog</RouterLink>
+            <RouterLink to="/blog" onClick={() => setIsOpen(false)}>Blog</RouterLink>
           </MenuItem>
           <MenuItem>
-            <ScrollLink to="contacto" smooth={true} duration={500} offset={-50} onClick={() => setIsOpen(false)}>Contacto</ScrollLink>
+            <ScrollToSectionLink to="contacto" onClick={() => setIsOpen(false)}>Contacto</ScrollToSectionLink>
           </MenuItem>
         </Menu>
       </MobileMenuWrapper>
