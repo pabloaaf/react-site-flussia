@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { scroller } from 'react-scroll';
 import { useLocation } from 'react-router-dom';
 
-import GlobalStyle from '../styles/GlobalStyle';
+//import GlobalStyle from '../styles/GlobalStyle';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import About from '../components/About';
@@ -26,10 +26,9 @@ function Home() {
       }, 100); // tweak this delay if needed
     }
   }, [location]);
-
+//  <GlobalStyle />
   return (
     <>
-      <GlobalStyle />
       <Header />
       <Hero />
       <Work />

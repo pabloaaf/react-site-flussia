@@ -1,23 +1,6 @@
 import styled from 'styled-components';
 import { PopupButton } from 'react-calendly';
-
-const Section = styled.section`
-  padding: 4rem 2rem;
-  background: #ffffff;
-  text-align: center;
-`;
-
-const Title = styled.h3`
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-`;
-
-const Subtitle = styled.p`
-  font-size: 1rem;
-  margin-bottom: 2rem;
-  color: #666;
-`;
+import { SectionA as Section, Subtitle } from '../styles/GlobalStyle';
 
 const Form = styled.form`
   max-width: 600px;
@@ -43,40 +26,28 @@ const Textarea = styled.textarea`
 `;
 
 const Button = styled.button`
-  background: #0f62fe;
-  color: white;
   padding: 1rem 2rem;
   font-size: 1rem;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.3s;
-
-  &:hover {
-    background: #0043ce;
-  }
 `;
 
 const StyledButton = styled(PopupButton)`
   padding: 0.8rem 2rem;
   font-size: 1rem;
-  background-color: #0f62fe;
-  color: white;
   border: none;
   border-radius: 30px;
   cursor: pointer;
   font-weight: 500;
   transition: background 0.3s;
-
-  &:hover {
-    background-color: #0049c6;
-  }
 `;
 
 export default function Contact() {
   return (
     <Section id="contacto">
-      <Title>Contáctanos</Title>
+      <h3>Contáctanos</h3>
       <Subtitle>¿Prefieres empezar por un mensaje? Te leemos y te orientamos sin compromiso.</Subtitle>
       <Form onSubmit={(e) => e.preventDefault()}>
         <Input type="text" placeholder="Tu nombre" required />

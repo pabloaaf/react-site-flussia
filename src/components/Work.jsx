@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { SectionB as Section, Subtitle } from '../styles/GlobalStyle';
 
 const steps = [
   {
@@ -19,27 +20,6 @@ const steps = [
   },
 ];
 
-const Section = styled.section`
-  background-color: #f4f6f8;
-  padding: 5rem 2rem;
-  text-align: center;
-`;
-
-const Heading = styled.h3`
-  font-size: 2.4rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-
-  span {
-    color: #0f62fe;
-  }
-`;
-
-const Subheading = styled.p`
-  color: #555;
-  margin-bottom: 4rem;
-`;
-
 const StepsWrapper = styled.div`
   display: grid;
   gap: 2rem;
@@ -50,10 +30,10 @@ const StepsWrapper = styled.div`
 `;
 
 const StepCard = styled.div`
-  background: #f9fafc;
+  background: ${({ theme }) => theme.colors.surface};
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 245, 195, 0.05);
+  box-shadow: 0 0 20px ${({ theme }) => theme.colors.surface};
   transition: transform 0.3s;
 
   &:hover {
@@ -62,8 +42,8 @@ const StepCard = styled.div`
 `;
 
 const StepNumber = styled.div`
-  background: #0f62fe;
-  color: #f9fafc;
+  background: ${({ theme }) => theme.colors.accent};
+  color: ${({ theme }) => theme.colors.surface};
   width: 48px;
   height: 48px;
   border-radius: 50%;
@@ -82,7 +62,7 @@ const StepTitle = styled.h4`
 
 const StepDescription = styled.p`
   font-size: 0.95rem;
-  color: #555;
+  color: ${({ theme }) => theme.colors.textSecondary};
   line-height: 1.6;
 `;
 
@@ -91,8 +71,8 @@ const AnimatedStepCard = motion(StepCard);
 export default function Work() {
   return (
     <Section id="como-funciona">
-      <Heading>Cómo <span>Trabajamos</span></Heading>
-      <Subheading>Un proceso simple en 3 pasos para transformar tu negocio</Subheading>
+      <h3><span>Cómo</span> Trabajamos</h3>
+      <Subtitle>Un proceso simple en 3 pasos para transformar tu negocio</Subtitle>
 
       <StepsWrapper>
         {steps.map((step, index) => (

@@ -7,7 +7,7 @@ const Nav = styled.nav`
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: white;
+  background: ${({ theme }) => theme.colors.background};
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 
   display: flex;
@@ -55,7 +55,7 @@ const MobileMenuWrapper = styled.div`
   right: 2rem;
   top: 100%;
   width: 200px;
-  background: white;
+  background: ${({ theme }) => theme.colors.background};
   border-radius: 8px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.1);
   z-index: 999;
@@ -75,7 +75,7 @@ const Menu = styled.ul`
 
 const MenuItem = styled.li`
   cursor: pointer;
-  color: #444;
+  color: ${({ theme }) => theme.colors.textSecondary};
   font-size: 1rem;
   transition: color 0.3s;
 

@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { usePosts } from '../posts/usePosts';
-import GlobalStyle from '../styles/GlobalStyle';
 import Header from '../components/Header';
 
 export default function Blog() {
@@ -12,7 +11,6 @@ export default function Blog() {
 
   return (
     <>
-      <GlobalStyle />
       <Header />
       <h1>Blog</h1>
       <ul>

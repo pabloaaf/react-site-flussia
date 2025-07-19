@@ -1,9 +1,10 @@
 export default function Callout({ children }) {
   return (
     <div style={{
-      backgroundColor: '#f4f4f4',
+      background: ({ theme }) => theme.colors.background,
       padding: '1rem',
-      borderLeft: '4px solid #0f62fe',
+      borderLeft: '4px solid',
+      borderLeftColor: ({ theme }) => theme.colors.accent,
       margin: '1.5rem 0'
     }}>
       {children}

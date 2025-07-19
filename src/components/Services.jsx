@@ -1,16 +1,5 @@
 import styled from 'styled-components';
-
-const Section = styled.section`
-  padding: 4rem 2rem;
-  background: #f4f6f8;
-  text-align: center;
-`;
-
-const Title = styled.h3`
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-`;
+import { SectionB as Section } from '../styles/GlobalStyle';
 
 const ServicesGrid = styled.div`
   display: grid;
@@ -21,7 +10,7 @@ const ServicesGrid = styled.div`
 `;
 
 const ServiceCard = styled.div`
-  background: white;
+  background: ${({ theme }) => theme.colors.background};
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
@@ -41,7 +30,7 @@ const ServiceDesc = styled.p`
 export default function Services() {
   return (
     <Section id="servicios">
-      <Title>Servicios</Title>
+      <h3>Servicios</h3>
       <ServicesGrid>
         <ServiceCard>
           <ServiceTitle>Branding</ServiceTitle>

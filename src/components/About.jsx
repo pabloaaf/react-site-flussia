@@ -1,24 +1,5 @@
 import styled from 'styled-components';
-
-const Section = styled.section`
-  padding: 4rem 2rem;
-  background: #f8f9fb;
-`;
-
-const Title = styled.h3`
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 3rem;
-  font-family: 'Playfair Display', serif;
-`;
-
-const Text = styled.p`
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 0 auto;
-  color: #555;
-  line-height: 1.7;
-`;
+import { SectionA as Section, Subtitle } from '../styles/GlobalStyle';
 
 const TeamGrid = styled.div`
   display: grid;
@@ -32,7 +13,7 @@ const TeamGrid = styled.div`
 const Card = styled.div`
   display: flex;
   flex-direction: column;
-  background: white;
+  background: ${({ theme }) => theme.colors.background};
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0,0,0,0.05);
@@ -84,11 +65,11 @@ const Bio = styled.p`
 export default function About() {
   return (
     <Section id="nosotros">
-      <Title>Sobre Nosotros</Title>
-      <Text>
+      <h3><span>Sobre</span> Nosotros</h3>
+      <Subtitle>
         En Flussia combinamos creatividad, estrategia y tecnología para ayudar a empresas a alcanzar su máximo potencial. 
         Nuestro enfoque está centrado en el cliente, brindando soluciones personalizadas que impulsan resultados tangibles.
-      </Text>
+      </Subtitle>
 
       <TeamGrid>
         {/* Persona 1 */}
