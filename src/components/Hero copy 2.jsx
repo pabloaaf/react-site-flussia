@@ -104,70 +104,9 @@ const Button = styled(ScrollLink)`
   }
 `;
 
-const GridSection = styled.section`
-  padding: 80px 40px;
-  background: ${({ theme }) => theme.colors.surface};
-
-  @media (max-width: 768px) {
-    padding: 40px 20px;
-  }
-`;
-
-const GridTitle = styled.h2`
-  text-align: center;
-  font-size: 36px;
-  font-weight: 700;
-  color: ${({ theme }) => theme.colors.secondary};
-
-  span {
-    color: ${({ theme }) => theme.colors.primary};
-  }
-`;
-
-const GridSubtitle = styled.p`
-  text-align: center;
-  max-width: 600px;
-  margin: 0 auto 40px;
-  color: ${({ theme }) => theme.colors.textSecondary};
-`;
-
-const Cards = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 24px;
-`;
-
-const Card = styled.div`
-  background: white;
-  border: 1px solid ${({ theme }) => theme.colors.primary};
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-
-  h4 {
-    margin-top: 12px;
-    font-size: 18px;
-    font-weight: 700;
-    color: ${({ theme }) => theme.colors.secondary};
-  }
-
-  p {
-    font-size: 15px;
-    color: ${({ theme }) => theme.colors.textSecondary};
-    margin-top: 8px;
-  }
-
-  svg {
-    color: ${({ theme }) => theme.colors.primary};
-    font-size: 24px;
-  }
-`;
-
 const List = styled.ul`
   list-style: disk;
 `;
-
-
 
 export default function Hero() {
   const words = ['Automático', 'Escalable', 'Eficiente'];
@@ -230,81 +169,35 @@ export default function Hero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <GridSection>
-            <GridTitle>
-              ¿Por qué la mayoría aún no aprovechan el potencial de la <span>IA</span>?
-            </GridTitle>
-            <GridSubtitle>
-              Muchos intentan implementar soluciones de IA, pero se encuentran con barreras técnicas, estratégicas o legales. Nosotros te ayudamos a superarlas:
-            </GridSubtitle>
-            <Cards>
-              <Card>
-                <FaShieldAlt />
-                <h4>Seguridad y soberanía de datos</h4>
-                <p>Tu información siempre protegida y bajo control.</p>
-              </Card>
-
-              <Card>
-                <FaSearch />
-                <h4>Recolección y estructuración de datos</h4>
-                <p>Recolectamos los datos adecuados para que tus modelos de IA funcionen correctamente.</p>
-              </Card>
-
-              <Card>
-                <FaCogs />
-                <h4>Despliegue on-premise de modelos</h4>
-                <p>Infraestructura local, sin atarte a proveedores externos.</p>
-              </Card>
-            </Cards>
-          </GridSection>
+          <Subtitle>¿Por qué la mayoría aún no aprovechan el potencial de la IA?</Subtitle><br/>
+          <h4>Muchos intentan implementar soluciones de IA, pero se encuentran con barreras técnicas, estratégicas o legales. Nosotros te ayudamos a superarlas:</h4>
+          <br/><br/>
+          <List>
+            <li><FaShieldAlt/>Soberanía y seguridad de datos: Garantizamos que tus datos estén protegidos y bajo tu control</li>
+            <li>Recolección y estructuración de datos: Te ayudamos a capturar los datos necesarios para que la IA funcione realmente bien</li>
+            <li>Despliegue local de modelos de IA: Soluciones on-premise, para que no dependas de proveedores externos</li>
+          </List>
         </Left>
         <Left
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          <GridSection>
-            <GridTitle>
-              Aplicaciones concretas que generan valor desde el primer día
-            </GridTitle>
-            <GridSubtitle>
-              Integramos IA en tus procesos clave para mejorar la eficiencia, reducir costos y escalar tu impacto:
-            </GridSubtitle>
-            <Cards>
-              <Card>
-                <FaRobot />
-                <h4>Automatización de atención</h4>
-                <p>Chatbots y asistentes virtuales que reducen carga operativa.</p>
-              </Card>
-
-              <Card>
-                <FaBullhorn />
-                <h4>Optimización de la cadena de suministro</h4>
-              </Card>
-
-              <Card>
-                <FaBullhorn />
-                <h4>Marketing inteligente</h4>
-                <p>Campañas personalizadas que aumentan conversiones.</p>
-              </Card>
-
-              <Card>
-                <FaBullhorn />
-                <h4>Generación de leads inteligente</h4>
-              </Card>
-
-              <Card>
-                <FaBullhorn />
-                <h4>Creación de contenido para redes y anuncios</h4>
-              </Card>
-
-              <Card>
-                <FaChartLine />
-                <h4>Prevención de fraudes</h4>
-                <p>Modelos de IA que detectan transacciones anómalas en tiempo real.</p>
-              </Card>
-            </Cards>
-          </GridSection>
+          <Subtitle>Aplicaciones concretas que generan valor desde el primer día</Subtitle><br/>
+          <h4>Integramos IA en tus procesos clave para mejorar la eficiencia, reducir costos y escalar tu impacto:</h4>
+          <br/><br/>
+          <List>
+            <li>Atención al cliente automatizada</li>
+            <li>Optimización de la cadena de suministro</li>
+            <li>Marketing basado en datos</li>
+            <li>Generación de leads inteligente</li>
+            <li>Creación de contenido para redes y anuncios</li>
+            <li>Análisis financiero y detección de fraudes</li>
+            <List>
+              <li>Utilizamos modelos de IA para automatizar el análisis de grandes volúmenes de transacciones, identificar patrones anómalos y prevenir fraudes en tiempo real</li>
+            </List>
+            <li>Desarrollo de soluciones IA a medida</li>
+          </List>
         </Left>
       </InfoWrapper>
     </>

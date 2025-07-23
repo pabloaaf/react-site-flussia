@@ -64,6 +64,8 @@ export const GlobalStyle = createGlobalStyle`
     font-family: ${({ theme }) => theme.textStyles.h3.fontFamily};
     margin-bottom: ${({ theme }) => theme.textStyles.h3.marginBottom};
     color: ${({ theme }) => theme.textStyles.h3.color};
+    line-height:  ${({ theme }) => theme.textStyles.h3.lineHeight};
+    letter-spacing: -0.02em;
 
     span {
       color: ${({ theme }) => theme.colors.textPrimary};
