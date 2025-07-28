@@ -105,11 +105,11 @@ const Button = styled(ScrollLink)`
 `;
 
 const GridSection = styled.section`
-  padding: 80px 40px;
+  padding: 40px 20px;
   background: ${({ theme }) => theme.colors.surface};
 
   @media (max-width: 768px) {
-    padding: 40px 20px;
+    padding: 20px 10px;
   }
 `;
 
@@ -127,7 +127,7 @@ const GridTitle = styled.h2`
 const GridSubtitle = styled.p`
   text-align: center;
   max-width: 600px;
-  margin: 0 auto 40px;
+  margin: 0 auto 20px;
   color: ${({ theme }) => theme.colors.textSecondary};
 `;
 
@@ -232,10 +232,10 @@ export default function Hero() {
         >
           <GridSection>
             <GridTitle>
-              ¿Por qué la mayoría aún no aprovechan el potencial de la <span>IA</span>?
+              ¿Por qué fallan otras empresas?
             </GridTitle>
             <GridSubtitle>
-              Muchos intentan implementar soluciones de IA, pero se encuentran con barreras técnicas, estratégicas o legales. Nosotros te ayudamos a superarlas:
+              Muchos intentan implementar soluciones de IA, pero se encuentran con barreras técnicas, estratégicas o legales. Nosotros te ayudamos a superarlas.
             </GridSubtitle>
             <Cards>
               <Card>
@@ -265,10 +265,10 @@ export default function Hero() {
         >
           <GridSection>
             <GridTitle>
-              Aplicaciones concretas que generan valor desde el primer día
+              Que podemos hacer por ti?
             </GridTitle>
             <GridSubtitle>
-              Integramos IA en tus procesos clave para mejorar la eficiencia, reducir costos y escalar tu impacto:
+              Integramos IA en tus procesos clave para mejorar la eficiencia, reducir costos y escalar tu impacto.
             </GridSubtitle>
             <Cards>
               <Card>

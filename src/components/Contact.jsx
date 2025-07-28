@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { PopupButton } from 'react-calendly';
-import { SectionA as Section, Subtitle } from '../styles/GlobalStyle';
+import { SectionB as Section, Subtitle } from '../styles/GlobalStyle';
 
 const Form = styled.form`
   max-width: 600px;
@@ -47,7 +47,7 @@ const StyledButton = styled(PopupButton)`
 export default function Contact() {
   return (
     <Section id="contacto">
-      <h3>Contáctanos</h3>
+      <h3>Contacto</h3>
       <Subtitle>¿Prefieres empezar por un mensaje? Te leemos y te orientamos sin compromiso.</Subtitle>
       <Form onSubmit={(e) => e.preventDefault()}>
         <Input type="text" placeholder="Tu nombre" required />

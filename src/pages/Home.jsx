@@ -8,6 +8,7 @@ import About from '../components/About';
 import Comunity from '../components/Comunity';
 import Work from '../components/Work';
 import Contact from '../components/Contact';
+import BlogPreview from '../components/BlogPreview';
 
 function Home() {
   const location = useLocation();
@@ -33,6 +34,7 @@ function Home() {
       <Work />
       <About />
       <Comunity />
+      <BlogPreview />
       <Contact />
     </>
   );

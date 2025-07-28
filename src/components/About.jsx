@@ -30,9 +30,9 @@ const Card = styled.div`
 `;
 
 const Image = styled.img`
-  width: 100%;
+  width: 50%;
   object-fit: cover;
-  height: 320px;
+  height: 120px;
 
   @media (min-width: 768px) {
     width: 40%;
@@ -77,10 +77,10 @@ export default function About() {
           <Image src="/assets/alejas.jpg" alt="Alejandro" />
           <Info>
             <Name>Alejandro Susillo</Name>
-            <Role>Especialista en IA & Transformación Digital</Role>
+            <Role>Desarrollador Software & Transformacion Digital</Role>
             <Bio>
-              Alejandro Susillo es un ingeniero software con experiencia en diversos países como Holanda, Luxemburgo y España. 
-              Ha trabajado en el sector IT, farmacéutico, químico y financiero, en proyectos internacionales y con roles de desarrollador y product manager, brindándole una alta capacidad de adaptación y versatilidad que le permite ajustar sus habilidades técnicas y de gestión según las necesidades de sus clientes. 
+              Con experiencia internacional en Holanda, Luxemburgo y España, desarrollo soluciones tecnológicas innovadoras. 
+              Mi versatilidad como desarrollador y product manager me permite adaptar estrategias técnicas según cada cliente y proyecto.
             </Bio>
           </Info>
         </Card>
@@ -90,9 +90,9 @@ export default function About() {
           <Image src="/react-site-flussia/assets/pabloa2.jpeg" alt="Pablo" />
           <Info>
             <Name>Pablo Alvarez</Name>
-            <Role>Estratega de Innovación & Producto</Role>
+            <Role>Desarrollador Full-Stack & Innovación</Role>
             <Bio>
-              Con experiencia en startups y grandes corporaciones, diseño estrategias centradas en el usuario que potencian nuevos modelos de negocio. 
+              Diseño estrategias centradas en el usuario que simplifican la adopción. 
               Mi visión une creatividad, tecnología y ejecución.
             </Bio>
           </Info>
