@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { usePosts } from '../posts/usePosts';
 import Header from '../components/Header';
 import { SectionB as Section, Subtitle } from '../styles/GlobalStyle';
+import Footer from '../components/Footer'
+import { PageWrapper, FooterWrapper } from '../styles/GlobalStyle';
 
 export default function Blog() {
   const posts = usePosts();
@@ -11,7 +13,7 @@ export default function Blog() {
   }
 
   return (
-    <>
+    <PageWrapper>
       <Header />
       <Section>
         <h3>Blog</h3>
@@ -26,6 +28,9 @@ export default function Blog() {
           ))}
         </ul>
       </Section>
-    </>
+      <FooterWrapper>
+        <Footer />
+      </FooterWrapper>
+    </PageWrapper>
   );
 }

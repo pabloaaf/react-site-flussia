@@ -1,5 +1,16 @@
 import { styled, createGlobalStyle } from 'styled-components';
 
+export const PageWrapper = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
+
+
+export const FooterWrapper = styled.div`
+  margin-top: auto; /* empuja el footer al final sin estirar el main */
+`;
+
 export const SectionA = styled.section`
   padding: 4rem 2rem;
   background: ${({ theme }) => theme.colors.surface};

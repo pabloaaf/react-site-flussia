@@ -9,6 +9,8 @@ import Comunity from '../components/Comunity';
 import Work from '../components/Work';
 import Contact from '../components/Contact';
 import BlogPreview from '../components/BlogPreview';
+import Footer from '../components/Footer'
+import { PageWrapper, FooterWrapper } from '../styles/GlobalStyle';
 
 function Home() {
   const location = useLocation();
@@ -28,7 +30,7 @@ function Home() {
   }, [location]);
 
   return (
-    <>
+    <PageWrapper>
       <Header />
       <Hero />
       <Work />
@@ -36,7 +38,10 @@ function Home() {
       <Comunity />
       <BlogPreview />
       <Contact />
-    </>
+      <FooterWrapper>
+      <Footer />
+      </FooterWrapper>
+    </PageWrapper>
   );
 }
 

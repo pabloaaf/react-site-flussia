@@ -5,6 +5,8 @@ import Callout from '../components/Callout';
 import { usePosts } from '../posts/usePosts';
 import Header from '../components/Header';
 import { SectionB as Section, Subtitle } from '../styles/GlobalStyle';
+import Footer from '../components/Footer'
+import { PageWrapper, FooterWrapper } from '../styles/GlobalStyle';
 
 export default function BlogPost() {
   const { id } = useParams();
@@ -21,7 +23,7 @@ export default function BlogPost() {
   const { Component, frontmatter } = post;
 
   return (
-    <>
+    <PageWrapper>
       <Header />
       <Section>
         <div style={{maxWidth: '800px', margin: '0 auto' }}>
@@ -34,6 +36,9 @@ export default function BlogPost() {
           </MDXProvider>
         </div>
       </Section>
-    </>
+      <FooterWrapper>
+        <Footer />
+      </FooterWrapper>
+    </PageWrapper>
   );
 }
