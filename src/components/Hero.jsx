@@ -3,19 +3,18 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link as ScrollLink } from 'react-scroll';
 import heroImg from '../assets/deconstructed-robot.svg';
-import { FaShieldAlt, FaChartLine, FaRobot, FaBullhorn, FaCogs, FaSearch } from 'react-icons/fa'; // https://react-icons.github.io/react-icons/search/#q=shield
+import { FaShieldAlt, FaChartLine, FaRobot, FaBullhorn, FaCogs, FaSearch } from 'react-icons/fa';
 
 const HeroWrapper = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 80px 40px;
+  padding: 60px 20px;
   background: ${({ theme }) => theme.colors.surface};
 
-  @media (max-width: 768px) {
+  @media (max-width: 1176px) {
     flex-direction: column;
     text-align: center;
-    padding: 60px 20px;
   }
 `;
 
@@ -25,7 +24,7 @@ const InfoWrapper = styled.section`
   padding: 10px 40px;
   background: ${({ theme }) => theme.colors.surface};
 
-  @media (max-width: 768px) {
+  @media (max-width: 1176px) {
     flex-direction: column;
     text-align: center;
     padding: 10px 20px;
@@ -34,9 +33,9 @@ const InfoWrapper = styled.section`
 
 const Left = styled(motion.div)`
   flex: 1;
-  padding-right: 40px;
+  padding-right: 20px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1176px) {
     padding-right: 0;
   }
 `;
@@ -105,22 +104,28 @@ const Button = styled(ScrollLink)`
 `;
 
 const GridSection = styled.section`
-  padding: 40px 20px;
+  padding: 40px 16px;
   background: ${({ theme }) => theme.colors.surface};
 
-  @media (max-width: 768px) {
-    padding: 20px 10px;
+  @media (min-width: 1176px) {
+    padding: 60px 20px;
   }
 `;
 
 const GridTitle = styled.h2`
   text-align: center;
-  font-size: 36px;
+  font-size: 28px;
   font-weight: 700;
   color: ${({ theme }) => theme.colors.secondary};
+  margin-bottom: 12px;
 
   span {
     color: ${({ theme }) => theme.colors.primary};
+  }
+
+  @media (min-width: 1176px) {
+    font-size: 36px;
+    margin-bottom: 16px;
   }
 `;
 
@@ -133,41 +138,82 @@ const GridSubtitle = styled.p`
 
 const Cards = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+
+  @media (max-width: 345px) {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 8px;
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  @media (min-width: 1176px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
 `;
 
 const Card = styled.div`
   background: white;
   border: 1px solid ${({ theme }) => theme.colors.primary};
   border-radius: 12px;
-  padding: 24px;
+  padding: 20px 16px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
 
   h4 {
     margin-top: 12px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     color: ${({ theme }) => theme.colors.secondary};
+    line-height: 1.4;
   }
 
   p {
-    font-size: 15px;
+    font-size: 14px;
     color: ${({ theme }) => theme.colors.textSecondary};
     margin-top: 8px;
+    line-height: 1.5;
   }
 
   svg {
     color: ${({ theme }) => theme.colors.primary};
-    font-size: 24px;
+    font-size: 28px;
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 1176px) {
+    padding: 24px;
+
+    h4 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 15px;
+    }
+
+    svg {
+      font-size: 32px;
+    }
   }
 `;
 
 const List = styled.ul`
   list-style: disk;
 `;
-
-
 
 export default function Hero() {
   const words = ['Automático', 'Escalable', 'Eficiente'];

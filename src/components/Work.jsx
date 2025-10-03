@@ -22,22 +22,29 @@ const steps = [
 
 const StepsWrapper = styled.div`
   display: grid;
-  gap: 2rem;
+  gap: 20px;
+  margin-top: 40px;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
   }
 `;
 
 const StepCard = styled.div`
   background: ${({ theme }) => theme.colors.surface};
-  padding: 2rem;
+  padding: 24px 20px;
   border-radius: 12px;
-  box-shadow: 0 0 20px ${({ theme }) => theme.colors.surface};
-  transition: transform 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
     transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  @media (min-width: 768px) {
+    padding: 32px 24px;
   }
 `;
 
@@ -47,23 +54,44 @@ const StepNumber = styled.div`
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  margin: 0 auto 1rem;
+  margin: 0 auto 16px;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (min-width: 768px) {
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
 `;
 
 const StepTitle = styled.h4`
-  font-size: 1.2rem;
-  margin-bottom: 0.75rem;
+  font-size: 18px;
+  margin-bottom: 12px;
+  text-align: center;
+  font-weight: 700;
+  color: ${({ theme }) => theme.colors.secondary || '#1a1a1a'};
+
+  @media (min-width: 768px) {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
 `;
 
 const StepDescription = styled.p`
-  font-size: 0.95rem;
+  font-size: 15px;
   color: ${({ theme }) => theme.colors.textSecondary};
   line-height: 1.6;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.7;
+  }
 `;
 
 const AnimatedStepCard = motion(StepCard);

@@ -31,8 +31,8 @@ export const theme = {
     },
     h3: {
       fontFamily: "Inter Tight, sans-serif",
-      fontSize: '64px',
-      lineHeight: '64px',
+      fontSize: '60px',
+      lineHeight: '60px',
       fontWeight: 700,
       marginBottom: '1rem',
       color: '#ED3EF7',

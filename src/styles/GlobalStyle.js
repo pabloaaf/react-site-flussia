@@ -81,6 +81,10 @@ export const GlobalStyle = createGlobalStyle`
     span {
       color: ${({ theme }) => theme.colors.textPrimary};
     }
+
+    @media (max-width: 345px) {
+      font-size: 40px;
+    }
   }
 
   a {

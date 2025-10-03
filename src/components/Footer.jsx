@@ -71,7 +71,7 @@ export default function Footer() {
   return (
     <FooterContainer>
       <Left>
-        <Logo src="/react-site-flussia/assets/logo-flussia.png" alt="Logo Flussia" />
+        <Logo src="/react-site-flussia/assets/logo-flussia-white.png" alt="Logo Flussia" />
         <p>
           ¿De qué vamos? De mostrarte cómo aprovechar la inteligencia artificial para automatizar tareas, optimizar tu empresa y hacer crecer tu negocio más rápido que nunca.
         </p>
