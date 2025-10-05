@@ -1,8 +1,8 @@
 export const theme = {
   colors: {
-    primary: '#ED3EF7',
+    primary: '#000000', // '#ED3EF7',
     secondary: '#2C2C2C',
-    accent: '#0f62fe',
+    accent: '#757575', //'#0f62fe',
     background: '#FFFFFF',
     surface: '#F8F9FA',
     textPrimary: '#212121',
@@ -35,7 +35,7 @@ export const theme = {
       lineHeight: '60px',
       fontWeight: 700,
       marginBottom: '1rem',
-      color: '#ED3EF7',
+      color: '#000000', //'#ED3EF7',
     },
     body: {
       fontFamily: "Inter Tight, sans-serif",
@@ -46,8 +46,8 @@ export const theme = {
   },
   buttons: {
     primary: {
-      background: '#0f62fe',
-      backgroundHover: '#0043ce',
+      background: '#6b7280', //'#0f62fe',
+      backgroundHover: '#b6bcc6', //'#0043ce',
       color: '#FFFFFF',
     },
     secondary: {

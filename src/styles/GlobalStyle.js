@@ -29,6 +29,32 @@ export const Subtitle = styled.p`
   color: ${({ theme }) => theme.colors.textSecondary};
 `;
 
+export const CTAButton = styled.button`
+  background: ${({ theme }) => theme.colors.primary || '#0f62fe'};
+  color: white;
+  border: 2px solid ${({ theme }) => theme.colors.primary || '#0f62fe'};
+  border-radius: 24px;
+  padding: 0.75rem 2rem;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &:hover {
+    background: transparent;
+    color: ${({ theme }) => theme.colors.primary || '#0f62fe'};
+  }
+
+  &::after {
+    content: '→';
+    font-size: 18px;
+  }
+
+`;
+
 /*
 const Text = styled.p`
   font-size: 1.1rem;

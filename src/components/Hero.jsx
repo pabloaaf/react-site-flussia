@@ -4,6 +4,11 @@ import { motion } from 'framer-motion';
 import { Link as ScrollLink } from 'react-scroll';
 import heroImg from '../assets/deconstructed-robot.svg';
 import { FaShieldAlt, FaChartLine, FaRobot, FaBullhorn, FaCogs, FaSearch } from 'react-icons/fa';
+import { CTAButton } from '../styles/GlobalStyle';
+
+const Background = styled.div`
+  background: ${({ theme }) => theme.colors.surface};
+`
 
 const HeroWrapper = styled.section`
   display: flex;
@@ -11,32 +16,46 @@ const HeroWrapper = styled.section`
   justify-content: space-between;
   padding: 60px 20px;
   background: ${({ theme }) => theme.colors.surface};
+  max-width: 100%;
+  overflow-x: hidden;
 
-  @media (max-width: 1176px) {
+  @media (min-width: 768px) {
+    padding: 80px 40px;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 767px) {
     flex-direction: column;
     text-align: center;
   }
 `;
 
+
 const InfoWrapper = styled.section`
   display: flex;
-  justify-content: space-between;
-  padding: 10px 40px;
-  background: ${({ theme }) => theme.colors.surface};
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px;
+  max-width: 100%;
+  overflow-x: hidden;
 
-  @media (max-width: 1176px) {
-    flex-direction: column;
-    text-align: center;
-    padding: 10px 20px;
+  @media (min-width: 1024px) {
+    gap: 60px;
+    padding: 40px;
+    margin: 0 auto;
   }
 `;
 
 const Left = styled(motion.div)`
   flex: 1;
-  padding-right: 20px;
+  width: 100%;
 
-  @media (max-width: 1176px) {
-    padding-right: 0;
+  @media (min-width: 1024px) {
+    padding-right: 20px;
   }
 `;
 
@@ -78,8 +97,8 @@ const Subtitle = styled.p`
 `;
 
 const Word = styled.span`
-  color: ${({ theme }) => theme.colors.primary};
-  border-right: 2px solid ${({ theme }) => theme.colors.primary};
+  color: #ED3EF7;
+  border-right: 2px solid #ED3EF7;
   white-space: nowrap;
   overflow: hidden;
 `;
@@ -107,7 +126,7 @@ const GridSection = styled.section`
   padding: 40px 16px;
   background: ${({ theme }) => theme.colors.surface};
 
-  @media (min-width: 1176px) {
+  @media (min-width: 768px) {
     padding: 60px 20px;
   }
 `;
@@ -123,7 +142,7 @@ const GridTitle = styled.h2`
     color: ${({ theme }) => theme.colors.primary};
   }
 
-  @media (min-width: 1176px) {
+  @media (min-width: 768px) {
     font-size: 36px;
     margin-bottom: 16px;
   }
@@ -141,18 +160,13 @@ const Cards = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
 
-  @media (max-width: 345px) {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 8px;
-  }
-
   @media (min-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
   }
 
   @media (min-width: 1176px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(, 1fr);
     gap: 24px;
   }
 `;
@@ -194,7 +208,7 @@ const Card = styled.div`
     flex-shrink: 0;
   }
 
-  @media (min-width: 1176px) {
+  @media (min-width: 768px) {
     padding: 24px;
 
     h4 {
@@ -247,7 +261,7 @@ export default function Hero() {
   }, [typedText, isDeleting, wordIndex]);
 
   return (
-    <>
+    <Background>
       <HeroWrapper id="inicio">
         <Left
           initial={{ opacity: 0, x: -50 }}
@@ -260,7 +274,7 @@ export default function Hero() {
           </h3>
           <Subtitle>Automatizamos tus procesos para que ganes tiempo, eficiencia y resultados.</Subtitle>
           <br/><br/>
-          <Button to="contacto" smooth={true} duration={500} offset={-80}>Hablemos</Button>
+          <CTAButton onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth', offset: '-80'})} duration={500}>Hablemos</CTAButton>
         </Left>
         <Right
           initial={{ opacity: 0, x: 50 }}
@@ -353,6 +367,6 @@ export default function Hero() {
           </GridSection>
         </Left>
       </InfoWrapper>
-    </>
+    </Background>
   );
 }
